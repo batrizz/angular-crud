@@ -18,7 +18,16 @@ export class StudentNewComponent implements OnInit {
   }
 
   onSubmit() {
-    this.studentsService.save(this.student)
-    this.router.navigateByUrl("/students");
+    this.studentsService.save(this.student).subscribe(() => {
+      this.router.navigateByUrl("/students");
+    })
+  }
+
+  isValid() {
+    if (!this.student.name || !this.student.email || !this.student.birthday) {
+      return false;
+    }
+
+    return true;
   }
 }
