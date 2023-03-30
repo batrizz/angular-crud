@@ -18,12 +18,12 @@ export class StudentsService {
 
   update(id: number, student: Student) {
     const index = this.students.findIndex(student => student.id === id);
-    this.students.splice(index, id, student);
+    this.students.splice(index, 1, student);
   }
 
   deleteById(id: number) {
     const index = this.students.findIndex(student => student.id === id);
-    this.students.splice(index, id);
+    this.students.splice(index, 1);
   }
 
   findById(id: number) {
@@ -43,9 +43,9 @@ export class StudentsService {
   }
 
   private loadStudents() {
-    this.students.push(new Student(1, 'Ana', 'ana@gmail.com', '2001-04-23 '));
-    this.students.push(new Student(2, 'Julia', 'julia@gmail.com', '2003-12-09 '));
-    this.students.push(new Student(3, 'Pedro', 'pedro@gmail.com', '2002-06-13 '));
+    // this.students.push(new Student(1, 'Ana', 'ana@gmail.com', '2001-04-23 '));
+    // this.students.push(new Student(2, 'Julia', 'julia@gmail.com', '2003-12-09 '));
+    // this.students.push(new Student(3, 'Pedro', 'pedro@gmail.com', '2002-06-13 '));
     // this.students.push(new Student(1, 'Vitória', 'vitoria@gmail.com', '2001-11-22 '));
     // this.students.push(new Student(1, 'Beatriz', 'bia@gmail.com', '2003-05-05 '));
     // this.students.push(new Student(1, 'Augusto', 'guto@gmail.com', '2004-04-24 '));
