@@ -13,6 +13,13 @@
       "birthday": "2003-05-05",
       "createdAt": 1680208717457,
       "id": 10
+    },
+    {
+      "name": "juu",
+      "email": "ju@email.com",
+      "birthday": "2003-03-20",
+      "createdAt": 1680540250491,
+      "id": 11
     }
   ]
 }

@@ -4,7 +4,7 @@ import { Student } from './student';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
-import { finalize } from 'rxjs/operators';
+import { delay, finalize } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -20,25 +20,42 @@ export class StudentsService {
     }
 
   save(student: Student) {
-    return this.http.post<Student>(this.apiUrl, student)
+    this.spinner.show();
+    return this.http.post<Student>(this.apiUrl, student).pipe(
+      delay(1000),
+      finalize(() => this.spinner.hide())
+    );
   }
 
   update(id: number, student: Student) {
-    return this.http.put<Student>(`${this.apiUrl}/${id}`, student)
+    this.spinner.show();
+    return this.http.put<Student>(`${this.apiUrl}/${id}`, student).pipe(
+      delay(1000),
+      finalize(() => this.spinner.hide())
+    );
   }
 
   deleteById(id: number) {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`)
+    this.spinner.show();
+    return this.http.delete<void>(`${this.apiUrl}/${id}`).pipe(
+      delay(1000),
+      finalize(() => this.spinner.hide())
+    );
   }
 
   findById(id: number) {
-    return this.http.get<Student>(`${this.apiUrl}/${id}`)
+    this.spinner.show();
+    return this.http.get<Student>(`${this.apiUrl}/${id}`).pipe(
+      delay(1000),
+      finalize(() => this.spinner.hide())
+    );
   }
 
   findAll() {
     this.spinner.show();
     return this.http.get<Student[]>(this.apiUrl).pipe(
-      // finalize(() => this.spinner.hide())
-    );
+      delay(1000),
+      finalize(() => this.spinner.hide())
+    )
   }
 }
