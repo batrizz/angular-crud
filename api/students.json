@@ -1,14 +1,7 @@
 {
   "students": [
     {
-      "name": "Matheus ",
-      "email": "teteu@gmail.com",
-      "birthday": "2002-04-16",
-      "createdAt": 1680207716243,
-      "id": 9
-    },
-    {
-      "name": "Beatriz souza nunes",
+      "name": "Beatriz souza Nunes",
       "email": "biahsouzanunes@gmail.com",
       "birthday": "2003-05-05",
       "createdAt": 1680208717457,
@@ -19,7 +12,45 @@
       "email": "ju@email.com",
       "birthday": "2003-03-20",
       "createdAt": 1680540250491,
-      "id": 11
+      "id": 11,
+      "lat": -23.568847147968608,
+      "lng": -46.70219695882017
+    },
+    {
+      "name": "Yuri",
+      "email": "yuri@gmail.com",
+      "birthday": "1998-10-05",
+      "lat": -23.545558144048773,
+      "lng": -46.69337069429068,
+      "createdAt": 1681154727177,
+      "id": 12
+    },
+    {
+      "name": "Tata",
+      "email": "tata@gmail.com",
+      "birthday": "1304-03-04",
+      "lat": -23.542935295119523,
+      "lng": -46.66453158296255,
+      "createdAt": 1681154818445,
+      "id": 13
+    },
+    {
+      "name": "giu",
+      "email": "giu@gmail.com",
+      "birthday": "2003-05-05",
+      "createdAt": 1681160866868,
+      "id": 14,
+      "lat": -23.537532472134167,
+      "lng": -46.62855422810728
+    },
+    {
+      "name": "abrao",
+      "email": "abrao@gmail.com",
+      "birthday": "2003-05-05",
+      "createdAt": 1681161024092,
+      "id": 15,
+      "lat": -23.542725874033483,
+      "lng": -46.7203930647772
     }
   ]
 }

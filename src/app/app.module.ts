@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     CoreModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Student } from './student';
 import { environment } from 'src/environments/environment';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { ToastrService } from 'ngx-toastr';
 import { delay, finalize } from 'rxjs/operators';
 
 @Injectable({
@@ -15,7 +14,6 @@ export class StudentsService {
 
   constructor(
     private http: HttpClient,
-    private toastr: ToastrService,
     private spinner: NgxSpinnerService ) {
     }
 
@@ -56,6 +54,6 @@ export class StudentsService {
     return this.http.get<Student[]>(this.apiUrl).pipe(
       delay(1000),
       finalize(() => this.spinner.hide())
-    )
+      )
   }
 }

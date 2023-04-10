@@ -3,11 +3,16 @@ import { RouterModule, Routes } from '@angular/router';
 import { StudentListComponent } from './student-list/student-list.component';
 import { StudentNewComponent } from './student-new/student-new.component';
 import { StudentEditComponent } from './student-edit/student-edit.component';
+import { StudentMapComponent } from './student-map/student-map.component';
 
 const routes: Routes = [
   {
     path: '',
     component: StudentListComponent,
+  },
+  {
+    path: 'map',
+    component: StudentMapComponent,
   },
   {
     path: 'new',
@@ -16,7 +21,7 @@ const routes: Routes = [
   {
     path: ':id',
     component: StudentEditComponent,
-  },
+  }
 ];
 
 @NgModule({

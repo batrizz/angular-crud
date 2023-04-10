@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Student } from '../student';
-import { StudentsService } from './../students.service';
+import { StudentsService } from '../students.service';
 
 @Component({
   selector: 'app-student-list',
@@ -11,22 +11,22 @@ export class StudentListComponent implements OnInit {
 
   students: Student[] = [];
 
-  constructor (private studentsService: StudentsService) { }
+  constructor(private studentService: StudentsService) { }
 
   ngOnInit(): void {
     this.loadStudents();
   }
 
-  onDelete(id: number){
-    console.log('delete', id);
-    this.studentsService.deleteById(id).subscribe(() => {
+  onDelete(id: number) {
+    this.studentService.deleteById(id).subscribe(() => {
       this.loadStudents();
     });
   }
 
   private loadStudents() {
-    this.studentsService.findAll().subscribe(response => {
+    this.studentService.findAll().subscribe(response => {
       this.students = response;
     });
   }
+
 }
